@@ -15,26 +15,5 @@ export class AppComponent {
   des = "Papagaio";
 
   //Declarando um objeto quando coloco as ={}
-  titulo = "Minhas Fotos";
-  
-  catalogoFotos = [
-    {img: "assets/img/portfolio/cabin.png", titulo: "Cabana"},
-    {img: "assets/img/portfolio/cake.png", titulo: "Bolo"},
-    {img: "assets/img/portfolio/circus.png", titulo: "Circo"},
-    {img: "assets/img/portfolio/game.png", titulo: "Jogo"},
-    {img: "assets/img/portfolio/safe.png", titulo: "Cofre"},
-    {img: "assets/img/portfolio/submarine.png", titulo: "Submarino"},
-  ]
-
-  clicar()
-  {
-    if(this.titulo == "Minhas Fotos")
-    {
-      this.titulo = "Minhas Imagens";
-    }
-    else
-    {
-      this.titulo = "Minhas Fotos";
-    }    
-  }
+ 
 }
