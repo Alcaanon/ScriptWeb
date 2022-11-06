@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { Fotos } from './portfolio';
 
 @Component({
   selector: 'app-portfolio',
   templateUrl: 'portfolio.component.html',
   styleUrls: ['portfolio.component.css']
 })
-export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+export class PortfolioComponent implements OnInit {
 
   ngOnInit(): void {
   }
   titulo = "PORTFOLIO";
-  
-  catalogoFotos = [
-    {img: "assets/img/portfolio/cabin.png", titulo: "Cabana"},
-    {img: "assets/img/portfolio/cake.png", titulo: "Bolo"},
-    {img: "assets/img/portfolio/circus.png", titulo: "Circo"},
-    {img: "assets/img/portfolio/game.png", titulo: "Jogo"},
-    {img: "assets/img/portfolio/safe.png", titulo: "Cofre"},
-    {img: "assets/img/portfolio/submarine.png", titulo: "Submarino"},
-  ]
+    
+  catalogoFotos: Fotos[] = [];
+
+  constructor(private fotos: HttpClient) 
+  { 
+    fotos.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.catalogoFotos = caixa)    
+  }
 
   Pares: boolean = true;
   button = 'Mostrar Pares';
