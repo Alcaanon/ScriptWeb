@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Foto } from '../shared/foto';
 
 @Component({
@@ -10,24 +11,33 @@ import { Foto } from '../shared/foto';
 
 export class FormularioComponent implements OnInit {
 
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  };
+
   formulario!: FormGroup;
 
-  fotos: Foto = new Foto();
+  imagens: Foto[] = [];
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private http: HttpClient
+    ) { }
 
   ngOnInit(): void {
-    this.fotos = new Foto();
+    this.validaForm();
+  }
+
+  validaForm(){
     this.formulario = this.formBuilder.group({
-      img: [null, [Validators.required]],
-      titulo: [null, [Validators.required]],
-      descricao: [null, [Validators.required]]
+      img: ['', [Validators.required]],
+      titulo: ['', [Validators.required]]
     });
   }
 
   cadastro(){
     alert("Cadastrado com sucesso");
-    console.log(this.formulario.value);
+    this.http.post('http://localhost:3000/fotos/',JSON.stringify(this.formulario.value), this.httpOptions).subscribe();
   }
 
 

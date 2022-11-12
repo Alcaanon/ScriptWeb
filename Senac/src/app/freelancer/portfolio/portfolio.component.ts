@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Fotos } from './portfolio';
 
@@ -10,6 +10,10 @@ import { Fotos } from './portfolio';
 })
 
 export class PortfolioComponent implements OnInit {
+
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  };
 
   ngOnInit(): void {
   }
@@ -33,4 +37,10 @@ export class PortfolioComponent implements OnInit {
       this.button = 'Mostrar Pares';
     }
   }
+
+  deletar(id:number){
+    alert("Deletado com sucesso");
+    console.log(id);
+  }
+
 }

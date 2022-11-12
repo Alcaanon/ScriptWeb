@@ -13,10 +13,7 @@
         <div class="row justify-content-center">       
             <!-- Portfolio Item -->
             <div class="col-md-6 col-lg-4">
-                <div class="portfolio-item mx-auto" data-bs-toggle="modal" *ngFor="let foto of catalogoFotos; index as i" >
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                    </div>
+                <div class="portfolio-item mx-auto" *ngFor="let foto of catalogoFotos; index as i" >
                     <div *ngIf="!Pares">
                         <div class="card shadow mt-5" style="width: 18rem" *ngIf="i % 2 == 0">
                             <img class="img-fluid" [src]="foto.img" alt="Imagem de capa do card" >
@@ -33,6 +30,7 @@
                             </div>      
                         </div> 
                     </div>
+                    <button (click)="deletar(foto.id)"   type="button" class="btn btn-danger btn-sm btn-block">Excluir</button>
                 </div> 
             </div>
             <button class="btn btn-primary" (click)="clicar()"> {{ button }} </button>

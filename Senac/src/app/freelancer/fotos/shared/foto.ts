@@ -1,5 +1,4 @@
-export class Foto {
-    img: string = '';
-    titulo: string = '';
-    descricao: string = '';
+export interface Foto {
+    img: string,
+    titulo: string
 }
