@@ -1,16 +1,20 @@
-
-<h1>
-  {{title}}
-</h1>
-
-<p>
-  {{descricao}}
-</p>
-
-<p *ngIf="pessoa.idade >= 18" >{{pessoa.nome}}</p>
-
-<h2 *ngFor="let kevin of meuCliente">
-  <p *ngIf="kevin.idade >= 18">{{kevin.nome}}</p>
-</h2>
-
-<img *ngFor="let show of catalogoFotos" [src]="show.img" alt="">
+<body id="page-top">
+  <!-- Navigation-->
+  <app-navbar></app-navbar>
+  <!-- Masthead-->
+  <app-header></app-header>
+  <!-- Formulario-->
+  <app-formulario></app-formulario>
+  <!-- Portfolio Section-->
+  <app-portfolio></app-portfolio>
+  <!-- About Section-->
+    <app-about></app-about>
+  <!-- Contact Section-->
+  <app-contact></app-contact>
+  <!-- Footer-->
+  <app-footer></app-footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>

@@ -1,0 +1,29 @@
+<form class="textoteste" (ngSubmit)="cadastro()">
+    
+    
+  <div class="col-2">
+    <div class="form-group">
+      <label for="img">Imagem</label>
+      <input type="text" class="form-control" name="img" id="img" required [(ngModel)]="fotos.img">
+    </div>
+  </div>
+    
+  <div class="col-2">
+    <div class="form-group">
+        <label for="titulo">Titulo</label>
+        <input class="form-control" rows="3" name="titulo" id="titulo" required [(ngModel)]="fotos.titulo">
+      </div>   
+  </div>
+  
+  <div class="col-5">
+     <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea class="form-control" rows="3" name="descricao" id="descricao" required [(ngModel)]="fotos.descricao"></textarea>
+    </div>   
+  </div>
+
+  
+    <input type="submit" class="btn btn-primary mt-4" value="Salvar">
+    <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+  
+</form>
