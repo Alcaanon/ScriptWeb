@@ -21,9 +21,9 @@ export class PortfolioComponent implements OnInit {
     
   catalogoFotos: Fotos[] = [];
 
-  constructor(private fotos: HttpClient) 
+  constructor(private http: HttpClient) 
   { 
-    fotos.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.catalogoFotos = caixa)    
+    http.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.catalogoFotos = caixa)    
   }
 
   Pares: boolean = true;
@@ -40,7 +40,7 @@ export class PortfolioComponent implements OnInit {
 
   deletar(id:number){
     alert("Deletado com sucesso");
-    console.log(id);
+    this.http.delete('http://localhost:3000/fotos/'+ id).subscribe();
   }
 
 }

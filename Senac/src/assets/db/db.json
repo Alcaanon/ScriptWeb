@@ -29,11 +29,6 @@
       "id": 6,
       "img": "assets/img/portfolio/submarine.png",
       "titulo": "Submarino"
-    },
-    {
-      "img": "https://cdn.pixabay.com/photo/2022/10/07/09/06/bridge-7504605__340.jpg",
-      "titulo": "Ponte do Professor",
-      "id": 7
     }
   ]
 }
