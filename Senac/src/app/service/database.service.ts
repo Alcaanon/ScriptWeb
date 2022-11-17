@@ -27,16 +27,3 @@ export class DatabaseService {
   }
 
 }
-
-
-/*
-Desafio mão na massa: 
-
-  Configurar o método postFoto(){} no databaseservice para cadastrar foto
-
-  Substitiur o httpclient no formulario.componet.ts pelo databaseservice
-
-  Utilizar o método postFoto(){} dentro formulario.componet.ts
-
-
-  */
