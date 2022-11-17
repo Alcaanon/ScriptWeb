@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpHeaders } from '@angular/common/http';
 import { Fotos } from '../../portfolio/portfolio';
 import { DatabaseService } from 'src/app/service/database.service';
 
@@ -51,33 +50,4 @@ export class FormularioComponent implements OnInit {
         error: (e) => console.error(e)
       });
     }
-      
-      
-
-    
-
-  
-    /*
-    httpOptions = {
-    headers: new HttpHeaders({'Content-Type' : 'application/json'})
-  };
-
-  
-  
-  
-  
-  
-
-  cadastro(value: any)
-  {
-    alert("Cadastrado com sucesso");
-    // this.http.post('http://localhost:3000/fotos/',JSON.stringify(this.formulario.value), this.httpOptions).subscribe();
-    //form = JSON.stringify(this.formulario.value), this.httpOptions;
-    let body = {
-      img: value.img,
-      titulo: value.titulo
-    }
-    this.database.postFoto(body).subscribe(response => { console.log(response)})
-  }*/
-
 }
