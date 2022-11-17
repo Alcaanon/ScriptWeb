@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { HttpHeaders } from '@angular/common/http';
 import { Fotos } from './portfolio';
+import { DatabaseService } from 'src/app/service/database.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -11,20 +11,19 @@ import { Fotos } from './portfolio';
 
 export class PortfolioComponent implements OnInit {
 
+  constructor(private database: DatabaseService) {}
+
+  catalogoFotos: Fotos[] = [];
+
+  ngOnInit() {
+    this.database.getFoto().subscribe(caixa => this.catalogoFotos = caixa);
+  }
+
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   };
 
-  ngOnInit(): void {
-  }
   titulo = "PORTFOLIO";
-    
-  catalogoFotos: Fotos[] = [];
-
-  constructor(private http: HttpClient) 
-  { 
-    http.get<Fotos[]>('http://localhost:3000/fotos').subscribe(caixa => this.catalogoFotos = caixa)    
-  }
 
   Pares: boolean = true;
   button = 'Mostrar Pares';
@@ -40,7 +39,7 @@ export class PortfolioComponent implements OnInit {
 
   deletar(id:number){
     alert("Deletado com sucesso");
-    this.http.delete('http://localhost:3000/fotos/'+ id).subscribe();
+    this.database.delFoto(id).subscribe();
   }
 
 }

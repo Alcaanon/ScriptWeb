@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Foto } from '../shared/foto';
+import { HttpHeaders } from '@angular/common/http';
+import { Fotos } from '../../portfolio/portfolio';
+import { DatabaseService } from 'src/app/service/database.service';
 
 @Component({
   selector: 'app-formulario',
@@ -10,36 +11,73 @@ import { Foto } from '../shared/foto';
 })
 
 export class FormularioComponent implements OnInit {
-
-  httpOptions = {
-    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  
+  foto: Fotos = {
+    img: "",
+    titulo: "",
+    id: 0
   };
-
-  formulario!: FormGroup;
-
-  imagens: Foto[] = [];
+  submitted = false;
 
   constructor(
     private formBuilder: FormBuilder, 
-    private http: HttpClient
+    private database: DatabaseService
     ) { }
+    
+    ngOnInit(): void {
+      this.validaForm();
+    }
 
-  ngOnInit(): void {
-    this.validaForm();
-  }
+    formulario!: FormGroup;
 
-  validaForm(){
-    this.formulario = this.formBuilder.group({
-      img: ['', [Validators.required]],
-      titulo: ['', [Validators.required]]
-    });
-  }
+    validaForm(){
+      this.formulario = this.formBuilder.group({
+        img: ['', [Validators.required]],
+        titulo: ['', [Validators.required]]
+      });
+    }
+  
+    cadastro(): void{
+      const data = {
+        img: this.foto.img,
+        titulo: this.foto.titulo
+      };
+      this.database.postFoto(data)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.submitted = true;
+        },
+        error: (e) => console.error(e)
+      });
+    }
+      
+      
 
-  cadastro(){
+    
+
+  
+    /*
+    httpOptions = {
+    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  };
+
+  
+  
+  
+  
+  
+
+  cadastro(value: any)
+  {
     alert("Cadastrado com sucesso");
-    this.http.post('http://localhost:3000/fotos/',JSON.stringify(this.formulario.value), this.httpOptions).subscribe();
-  }
-
-
+    // this.http.post('http://localhost:3000/fotos/',JSON.stringify(this.formulario.value), this.httpOptions).subscribe();
+    //form = JSON.stringify(this.formulario.value), this.httpOptions;
+    let body = {
+      img: value.img,
+      titulo: value.titulo
+    }
+    this.database.postFoto(body).subscribe(response => { console.log(response)})
+  }*/
 
 }
