@@ -1,0 +1,39 @@
+{
+    "Categoria": [{
+        "id": 0,
+        "nome": "",
+        "criado_em":""
+    }],
+    
+    "Servico": [{
+        "id": 0,
+        "imagem": "",
+        "titulo": "",
+        "descricao": "",
+        "categoria_id": "",
+        "criado_em": ""
+    }],
+
+    "Plano": [{
+        "id": 0,
+        "tipo": "",
+        "preco": "",
+        "info1": "",
+        "info2": "",
+        "info3": "",
+        "info4": "",
+        "info5": "",
+        "info6": "",
+        "info7": "",
+        "info8": "",
+        "categoria_id": "",
+        "criado_em": ""
+    }],
+
+    "Usuario": [{
+        "id": 0,
+        "nome": "",
+        "email": "",
+        "senha": ""
+    }]
+}
