@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'cadastro', component: RegisterComponent},
   { path: 'contato', component: ContatoComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'recuperar-senha', component: SenhaComponent}
+  { path: 'recuperar-senha', component: SenhaComponent},
+  
   
 ];
 
