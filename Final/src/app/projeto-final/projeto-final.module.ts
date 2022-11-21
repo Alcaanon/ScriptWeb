@@ -1,29 +1,26 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeaturesComponent } from './features/features.component';
-import { ServicosComponent } from './servicos/servicos.component';
-import { PrecosComponent } from './precos/precos.component';
-import { DepoimentosComponent } from './depoimentos/depoimentos.component';
-import { ContatoComponent } from './contato/contato.component';
-import { FormularioComponent } from './servicos/formulario/formulario.component';
-import { DetalhesComponent } from './servicos/detalhes/detalhes.component';
-import { SobreComponent } from './sobre/sobre.component';
-
+import { SharedModule } from './shared/shared.module';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { IndexComponent } from './index/index.component';
+import { IndexModule } from './index/index.module';
 
 
 @NgModule({
   declarations: [
-    FeaturesComponent,
-    ServicosComponent,
-    PrecosComponent,
-    DepoimentosComponent,
-    ContatoComponent,
-    FormularioComponent,
-    DetalhesComponent,
-    SobreComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
+    NavbarModule,
+    IndexModule
+    
+  ],
+  exports:[
+    IndexComponent
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class ProjetoFinalModule { }

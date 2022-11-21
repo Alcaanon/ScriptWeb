@@ -1,19 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlanoComponent } from '../plano/plano.component';
-import { FormularioComponent } from './formulario/formulario.component';
-import { DetalhesComponent } from './detalhes/detalhes.component';
+import { PlanoDetalhesComponent } from './plano-detalhes/plano-detalhes.component';
+import { PlanoFormularioComponent } from './plano-formulario/plano-formulario.component';
 
 
 
 @NgModule({
   declarations: [
     PlanoComponent,
-    FormularioComponent,
-    DetalhesComponent
+    PlanoDetalhesComponent,
+    PlanoFormularioComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    PlanoComponent,
+    PlanoDetalhesComponent,
+    PlanoFormularioComponent
   ]
 })
 export class PlanoModule { }
