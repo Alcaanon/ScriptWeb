@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import { NavbarModule } from '../shared/navbar/navbar.module';
 import { IndexComponent } from './index.component';
 import { ServicosComponent } from '../servicos/servicos.component';
 import { PlanoModule } from '../plano/plano.module';
@@ -19,7 +18,6 @@ import { ContatoComponent } from '../contato/contato.component';
   imports: [
     CommonModule,
     SharedModule,
-    NavbarModule,
     PlanoModule
   ],
   exports:[
