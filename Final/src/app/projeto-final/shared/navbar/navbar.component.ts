@@ -15,9 +15,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToLogin() {
-    this.router.navigate(['/login']);
-}
   Login: boolean = true;
   clicar() {
     if (this.Login) {
