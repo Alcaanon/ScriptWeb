@@ -4,6 +4,7 @@ import { SharedModule } from './shared/shared.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { IndexComponent } from './index/index.component';
 import { IndexModule } from './index/index.module';
+import { ServicosModule } from './servicos/servicos.module';
 
 
 @NgModule({
@@ -13,8 +14,8 @@ import { IndexModule } from './index/index.module';
     CommonModule,
     SharedModule,
     NavbarModule,
-    IndexModule
-    
+    IndexModule,
+    ServicosModule    
   ],
   exports:[
     IndexComponent

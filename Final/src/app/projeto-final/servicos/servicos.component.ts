@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Servico } from 'src/assets/Interfaces/Servico';
+import { DatabaseService } from '../database.service';
+
 
 @Component({
   selector: 'app-servicos',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicosComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private database: DatabaseService
+  ) { }
 
-  ngOnInit(): void {
+  catalogoServico: Servico[] = [];
+
+  ngOnInit() {
+    this.database.getServico().subscribe(servico => this.catalogoServico = servico)
+  }
+
+  deletar(id: number){
+    alert("Deletado com sucesso");
+    this.database.delServico(id).subscribe();
   }
 
 }
