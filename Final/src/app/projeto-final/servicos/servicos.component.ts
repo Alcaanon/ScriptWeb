@@ -20,6 +20,10 @@ export class ServicosComponent implements OnInit {
     this.database.getServico().subscribe(servico => this.catalogoServico = servico)
   }
 
+  editar(id: number){
+    alert("Editado com sucesso");
+  }
+
   deletar(id: number){
     alert("Deletado com sucesso");
     this.database.delServico(id).subscribe();
