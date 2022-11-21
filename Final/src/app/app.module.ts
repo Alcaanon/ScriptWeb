@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './projeto-final/login/login.module';
 import { ProjetoFinalModule } from './projeto-final/projeto-final.module';
+import { RegisterModule } from './projeto-final/register/register.module';
+import { SenhaModule } from './projeto-final/senha/senha.module';
 import { NavbarModule } from './projeto-final/shared/navbar/navbar.module';
 import { SharedModule } from './projeto-final/shared/shared.module';
 
@@ -18,6 +20,8 @@ import { SharedModule } from './projeto-final/shared/shared.module';
     NavbarModule,
     SharedModule,
     LoginModule,
+    RegisterModule,
+    SenhaModule,
     ProjetoFinalModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
