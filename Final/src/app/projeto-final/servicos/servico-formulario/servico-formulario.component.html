@@ -12,19 +12,19 @@
             <form [formGroup]="formulario" (submit)="cadastro()" >
                 <div class="form-group">
                     <label for="idImagem">Nome da imagem</label>
-                    <input type="text" id="imagem" name ="imagem" [(ngModel)]="servico.imagem" type="text" formControlName="imagem" class="form-control" value="">
+                    <input type="text" id="imagem" name ="imagem" [(ngModel)]="servico.imagem" type="text" formControlName="imagem" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label for="titulo">Titulo do serviço</label>
-                    <input type="text" id="titulo" name ="titulo" [(ngModel)]="servico.titulo" type="text" formControlName="titulo" class="form-control" value="">
+                    <input type="text" id="titulo" name ="titulo" [(ngModel)]="servico.titulo" type="text" formControlName="titulo" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descrição do serviço</label>
-                    <input type="text" id="descricao" name ="descricao" [(ngModel)]="servico.descricao" type="text" formControlName="descricao"  class="form-control" value="">
+                    <input type="text" id="descricao" name ="descricao" [(ngModel)]="servico.descricao" type="text" formControlName="descricao"  class="form-control" >
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Cadastrar</button>
+                    <button type="submit" class="btn btn-dark" [disabled]="!formulario.valid" >Cadastrar</button>
                 </div>
                 </form>
             </div>

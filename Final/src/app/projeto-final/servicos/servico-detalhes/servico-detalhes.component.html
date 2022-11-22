@@ -1,1 +1,33 @@
-<p>servico-detalhes works!</p>
+<br>
+<section class="content">
+    <div class="card">
+    <div class="card-body row">
+        <div class="col-5 text-center d-flex align-items-center justify-content-center">
+            <div class="">
+                <h2>SENAC<strong>|Script WEB</strong></h2>
+                <p class="lead mb-5">Cadastro de servico</p>
+            </div>
+        </div>
+        <div class="col-7">
+            <form [formGroup]="formulario" (submit)="cadastro()" >
+                <div class="form-group">
+                    <label for="idImagem">Nome da imagem</label>
+                    <input type="text" id="imagem" name ="imagem" [(ngModel)]="servico.imagem" type="text" formControlName="imagem" class="form-control" value=" {{servico.imagem}}" >
+                </div>
+                <div class="form-group">
+                    <label for="titulo">Titulo do serviço</label>
+                    <input type="text" id="titulo" name ="titulo" [(ngModel)]="servico.titulo" type="text" formControlName="titulo" class="form-control" value=" {{servico.titulo}}">
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição do serviço</label>
+                    <input type="text" id="descricao" name ="descricao" [(ngModel)]="servico.descricao" type="text" formControlName="descricao"  class="form-control" value=" {{servico.descricao}}">
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark" [disabled]="!formulario.valid" >Cadastrar</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
