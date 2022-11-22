@@ -49,7 +49,7 @@ export class DatabaseService {
   }
 
   updateServico(id: any, data: any): Observable<any>{
-    return this.http.put(`${ServiceURL}/${id}`, data);
+    return this.http.patch(`${ServiceURL}/update/${id}`, data);
   }
 
 

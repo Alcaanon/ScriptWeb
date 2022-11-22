@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Servico } from 'src/assets/Interfaces/Servico';
 import { DatabaseService } from '../../database.service';
@@ -9,7 +9,6 @@ import { DatabaseService } from '../../database.service';
   styleUrls: ['./servico-detalhes.component.css']
 })
 export class ServicoDetalhesComponent implements OnInit {
-
   constructor(
     private formBuilder: FormBuilder,
     private database: DatabaseService
@@ -38,22 +37,18 @@ export class ServicoDetalhesComponent implements OnInit {
     });
   }
 
-  cadastro(): void{
-    const data = {
-      imagem: this.servico.imagem,
-      titulo: this.servico.titulo,
-      descricao: this.servico.descricao
-    };
-    this.database.postServico(data)
-    .subscribe({
-      next: (res) => {
-        console.log(res);
-        this.submitted = true;
-      },
-      error: (e) => console.error(e)
-    });
+  editar(value: any) {
+    let body = {
+      imagem: value.imagem,
+      titulo: value.titulo,
+      descricao: value.descricao
+    }
 
-}
+    this.database.updateServico(body, `622ca8c59f6c668226f74f52`)
+      .subscribe(response => {
+        console.log(response)
+      })
+  }
 
 }
 

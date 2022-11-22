@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { ServicoFormularioComponent } from './servico-formulario/servico-formulario.component';
 import { ServicoDetalhesComponent } from './servico-detalhes/servico-detalhes.component';
 import { ServicosComponent } from './servicos.component';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -16,7 +17,8 @@ import { ServicosComponent } from './servicos.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   exports: [
     ServicosComponent,

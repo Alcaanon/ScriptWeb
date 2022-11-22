@@ -5,6 +5,7 @@ import { IndexComponent } from './projeto-final/index/index.component';
 import { LoginComponent } from './projeto-final/login/login.component';
 import { RegisterComponent } from './projeto-final/register/register.component';
 import { SenhaComponent } from './projeto-final/senha/senha.component';
+import { ServicoDetalhesComponent } from './projeto-final/servicos/servico-detalhes/servico-detalhes.component';
 
 const routes: Routes = [
   { path: '', component: IndexComponent},
@@ -12,8 +13,7 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent},
   { path: 'login', component: LoginComponent},
   { path: 'recuperar-senha', component: SenhaComponent},
-  
-  
+  { path: 'servico-editar', component: ServicoDetalhesComponent}  
 ];
 
 @NgModule({
